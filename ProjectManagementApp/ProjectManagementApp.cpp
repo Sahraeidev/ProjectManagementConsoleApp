@@ -3,6 +3,7 @@
 
 using namespace std;
 
+//CLASSES AND PROTOTYPES RELTED TO ACCOUNT MANAGEMENT
 class Account{
     public:
     Account(string name,string password)
@@ -36,21 +37,31 @@ class Account{
     string Password;
 
 };
-
 Account* CreateAccount();
 Account* LoginMenu();
 Account* AccountMenu();
 
 int main() {
+
+    //DISPLAY THE ACCOUNT MENU
     Account* CurrentAccount = AccountMenu();
     system("cls");
+    
+    if(CurrentAccount == nullptr)
+    {
+        cout << ">>Error creating or logging into account" << endl;
+        exit(0);
+    }
+
     cout<<"====WELCOME "<<CurrentAccount->GetName() << "====" << endl;
     cout << ">>This is the main menu of the project management app" << endl;
     cout << ">>You can manage the tasks of your projects here" << endl;
 
 }
 
+//FUNCTIONS RELATED TO ACCOUNT MANAGEMENT
 
+//THIS FUNCTION FINDS THE USER AND PASS IN FILES
 Account* LoginMenu()
 {
 
@@ -93,6 +104,7 @@ Account* LoginMenu()
 
     
 }
+//THIS FUNCTION DISPLAYS THE ACCOUNT MENU
 Account* AccountMenu()
 {
     while(1)
@@ -120,6 +132,7 @@ Account* AccountMenu()
     
 
 }
+//THIS FUNCTION CREATES AN ACCOUNT AND SAVES IT IN THE ACCOUNTS FILE
 Account* CreateAccount()
 {
     cout << "====CREATE ACCOUNT====" << endl;
