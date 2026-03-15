@@ -66,7 +66,7 @@ Account* LoginMenu()
     
             if(n == tempName && p == tempPassword)
             {
-               Account* tempAccount = new Account(tempAccount,tempAccount);
+               Account* tempAccount = new Account(tempName,tempPassword);
                return tempAccount;
             }
         }
@@ -111,7 +111,7 @@ Account* AccountMenu()
     
 
 }
-Account* CreateMenu()
+Account* CreateAccount()
 {
     string name,password;
     cout<<"Enter your name: ";
